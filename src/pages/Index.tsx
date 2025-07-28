@@ -3,107 +3,98 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
-  const whatsappNumber = "89892606158";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+  const phone = "89892606158";
+  const whatsappUrl = `https://wa.me/${phone}`;
+  const phoneFormatted = "8 (989) 260-61-58";
 
   const monuments = [
     {
       id: 1,
-      title: "Памятник «Вечная память»",
-      description: "Черный гранит с православным крестом и русской надписью",
-      price: "от 28 000 ₽",
-      image: "/img/0335ffe1-32ff-477b-ac5e-29ce1f146f62.jpg"
+      title: "Гранитные памятники",
+      description: "Черный и серый гранит",
+      price: "от 25 000 ₽",
+      image: "/img/2f28a04d-c6a7-429f-b4b0-53f22bfcfd15.jpg"
     },
     {
       id: 2,
-      title: "Мраморное надгробие «Покойся с миром»",
-      description: "Белый мрамор с кириллической гравировкой и датами",
-      price: "от 32 000 ₽",
-      image: "/img/0e5e10ff-fadd-4810-8e58-d99f35c75b8f.jpg"
+      title: "Цветные памятники",
+      description: "Красный и розовый гранит",
+      price: "от 30 000 ₽",
+      image: "/img/33532f34-dc8d-4f73-a51f-b18e58d35dd6.jpg"
     },
     {
       id: 3,
-      title: "Семейный памятник «Любимому мужу»",
-      description: "Красный гранит с золотыми буквами и цветочным орнаментом",
-      price: "от 42 000 ₽",
-      image: "/img/ec7b1499-f30d-4591-acfb-1a6a792d6cb1.jpg"
+      title: "Мраморные памятники",
+      description: "Белый и серый мрамор",
+      price: "от 35 000 ₽",
+      image: "/img/0e5e10ff-fadd-4810-8e58-d99f35c75b8f.jpg"
     }
   ];
 
   const services = [
-    {
-      title: "Изготовление памятника",
-      price: "от 20 000 ₽",
-      description: "Полный цикл изготовления из гранита или мрамора"
-    },
-    {
-      title: "Установка и монтаж",
-      price: "от 8 000 ₽",
-      description: "Профессиональная установка на кладбище"
-    },
-    {
-      title: "Гравировка портрета",
-      price: "от 5 000 ₽",
-      description: "Художественная гравировка портрета на камне"
-    },
-    {
-      title: "Реставрация",
-      price: "от 3 000 ₽",
-      description: "Восстановление и обновление памятников"
-    }
+    { title: "Изготовление", price: "от 20 000 ₽" },
+    { title: "Установка", price: "от 8 000 ₽" },
+    { title: "Гравировка", price: "от 3 000 ₽" },
+    { title: "Доставка", price: "от 2 000 ₽" }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-200">
+      <header className="border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Icon name="Landmark" size={24} className="text-primary" />
-            <h1 className="text-xl font-montserrat font-semibold text-primary">Памятники</h1>
+          <div className="flex items-center space-x-3">
+            <Icon name="Landmark" size={28} className="text-primary" />
+            <div>
+              <h1 className="text-xl font-montserrat font-bold text-primary">Мастерская Альтаир</h1>
+              <p className="text-sm text-gray-600">Памятники в Краснодаре</p>
+            </div>
           </div>
-          <Button asChild className="bg-green-600 hover:bg-green-700">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-              <Icon name="MessageCircle" size={16} />
-              <span>WhatsApp</span>
-            </a>
-          </Button>
+          <div className="flex items-center space-x-4">
+            <div className="text-right hidden sm:block">
+              <div className="font-semibold text-lg">{phoneFormatted}</div>
+              <div className="text-sm text-gray-600">Ежедневно 9:00-18:00</div>
+            </div>
+            <Button asChild className="bg-green-600 hover:bg-green-700">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Icon name="MessageCircle" size={16} className="mr-2" />
+                WhatsApp
+              </a>
+            </Button>
+          </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero */}
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-primary mb-6">
-            Памятники с душой
+            Памятники из гранита и мрамора
           </h2>
-          <p className="text-lg text-gray-600 font-open-sans mb-8 max-w-2xl mx-auto">
-            Создаем достойные памятники из качественных материалов. 
-            Индивидуальный подход к каждому заказу.
+          <p className="text-xl text-gray-600 mb-8">
+            Изготовление • Установка • Доставка
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <a href="#catalog">Каталог памятников</a>
+              <a href="#catalog">Каталог</a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-                <Icon name="MessageCircle" size={16} />
-                <span>Консультация</span>
+              <a href={`tel:${phone}`}>
+                <Icon name="Phone" size={16} className="mr-2" />
+                Позвонить
               </a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Catalog Section */}
+      {/* Catalog */}
       <section id="catalog" className="py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12">
-            Каталог памятников
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h3 className="text-3xl font-montserrat font-bold text-center mb-12">Каталог</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {monuments.map((monument) => (
-              <Card key={monument.id} className="hover:shadow-lg transition-shadow duration-300">
+              <Card key={monument.id} className="hover:shadow-lg transition-shadow">
                 <div className="aspect-square overflow-hidden rounded-t-lg">
                   <img 
                     src={monument.image} 
@@ -112,12 +103,12 @@ export default function Index() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-montserrat text-primary">{monument.title}</CardTitle>
-                  <CardDescription className="font-open-sans">{monument.description}</CardDescription>
+                  <CardTitle className="font-montserrat">{monument.title}</CardTitle>
+                  <CardDescription>{monument.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex justify-between items-center">
-                    <span className="text-lg font-semibold text-primary">{monument.price}</span>
+                    <span className="text-lg font-semibold">{monument.price}</span>
                     <Button size="sm" asChild>
                       <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                         Заказать
@@ -131,21 +122,18 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Services & Prices Section */}
+      {/* Services */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12">
-            Цены на услуги
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <h3 className="text-3xl font-montserrat font-bold text-center mb-12">Услуги</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center">
                 <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <CardTitle className="font-montserrat text-primary">{service.title}</CardTitle>
-                    <span className="text-lg font-semibold text-primary">{service.price}</span>
-                  </div>
-                  <CardDescription className="font-open-sans">{service.description}</CardDescription>
+                  <CardTitle className="text-lg">{service.title}</CardTitle>
+                  <CardDescription className="text-xl font-semibold text-primary">
+                    {service.price}
+                  </CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -153,58 +141,72 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* About */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-montserrat font-bold text-center text-primary mb-12">
-            Контактная информация
-          </h3>
-          <div className="max-w-2xl mx-auto">
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="font-montserrat text-primary flex items-center justify-center space-x-2">
-                  <Icon name="Phone" size={24} />
-                  <span>Свяжитесь с нами</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="text-2xl font-semibold text-primary">
-                  8 (989) 260-61-58
-                </div>
-                <p className="text-gray-600 font-open-sans">
-                  Работаем ежедневно с 9:00 до 18:00<br />
-                  Бесплатная консультация и выезд замерщика
-                </p>
-                <Button size="lg" asChild className="bg-green-600 hover:bg-green-700">
-                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-                    <Icon name="MessageCircle" size={20} />
-                    <span>Написать в WhatsApp</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-3xl font-montserrat font-bold mb-6">О мастерской</h3>
+              <div className="space-y-4 text-gray-600">
+                <p>Изготавливаем памятники из качественного гранита и мрамора.</p>
+                <p>Работаем в Краснодаре и Краснодарском крае.</p>
+                <p>Гарантия на все работы.</p>
+              </div>
+              <div className="mt-8">
+                <Button size="lg" asChild>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <Icon name="MessageCircle" size={20} className="mr-2" />
+                    Консультация
                   </a>
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+            <div className="rounded-lg overflow-hidden">
+              <img 
+                src="/img/6d5079db-2714-4a4b-8ed9-949a1c7b1056.jpg" 
+                alt="Мастерская"
+                className="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-3xl font-montserrat font-bold mb-8">Контакты</h3>
+          <div className="max-w-md mx-auto space-y-6">
+            <div>
+              <div className="text-2xl font-bold mb-2">{phoneFormatted}</div>
+              <div className="opacity-90">Ежедневно с 9:00 до 18:00</div>
+            </div>
+            <div className="flex justify-center space-x-4">
+              <Button variant="secondary" asChild>
+                <a href={`tel:${phone}`}>
+                  <Icon name="Phone" size={16} className="mr-2" />
+                  Позвонить
+                </a>
+              </Button>
+              <Button variant="secondary" asChild>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <Icon name="MessageCircle" size={16} className="mr-2" />
+                  WhatsApp
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center space-y-4">
-            <div className="flex items-center space-x-2">
-              <Icon name="Landmark" size={20} />
-              <span className="font-montserrat font-semibold">Памятники</span>
-            </div>
-            <p className="text-center text-sm opacity-80 font-open-sans">
-              © 2024 Изготовление памятников. Все права защищены.
-            </p>
-            <Button variant="secondary" size="sm" asChild>
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
-                <Icon name="MessageCircle" size={16} />
-                <span>WhatsApp: 8 (989) 260-61-58</span>
-              </a>
-            </Button>
+      <footer className="bg-gray-900 text-white py-6">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex items-center justify-center space-x-2 mb-4">
+            <Icon name="Landmark" size={20} />
+            <span className="font-montserrat font-semibold">Мастерская Альтаир</span>
           </div>
+          <p className="text-sm opacity-75">© 2024 Памятники в Краснодаре</p>
         </div>
       </footer>
     </div>
